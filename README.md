@@ -1,17 +1,13 @@
-![Querymancer interface](.github/banner.png)
+# Rootstrap_sql_head
 
-# Querymancer
-
-AI agent that lets you to talk to your database using natural language. All locally.
+AI agent that lets you talk to your database using natural language.
 
 Features:
 
 - AI Agent that can answer questions about your database
-- Works with local SQLite database (can be adapted to others)
+- Works with SQLite database (can be adapted to other databases)
 - Runs tools (`list_tables`, `sample_table`, `describe_table`, `execute_sql`) and provides reasoning
-- Uses Ollama for LLM inference
-
-Read the full tutorial on MLExpert.io: [mlexpert.io/v2-bootcamp/build-ai-agent](https://mlexpert.io/v2-bootcamp/build-ai-agent)
+- Uses Groq API for powerful language model capabilities
 
 ## Install
 
@@ -20,8 +16,8 @@ Make sure you have [`uv` installed](https://docs.astral.sh/uv/getting-started/in
 Clone the repository:
 
 ```bash
-git clone git@github.com:mlexpertio/querymancer.git .
-cd querymancer
+git clone https://github.com/claramedeiros-ctrl/txtosqlbot.git
+cd txtosqlbot
 ```
 
 Install Python:
@@ -34,6 +30,9 @@ Create and activate a virtual environment:
 
 ```bash
 uv venv
+# On Windows:
+.venv\Scripts\activate
+# On macOS/Linux:
 source .venv/bin/activate
 ```
 
@@ -67,10 +66,9 @@ This should create a file called `ecommerce.sqlite` in the `data` directory. Her
 
 ![SQLite database schema](.github/db-schema.png)
 
-### Run Ollama
+### Run Ollama, Qwen, and Groq API Setup
 
-Querymancer uses Ollama for LLM inference. Watch this video to see how to install Ollama: https://www.youtube.com/watch?v=lmFCVCqOlz8
-
+Querymancer can use Ollama for LLM inference. 
 One model you can use is `gemma3-tools:12b`:
 
 ```bash
@@ -82,21 +80,34 @@ But I found that it won't work well (not good enough tool support). Another good
 ```bash
 ollama pull qwen2.5
 ```
-
-Feel free to experiment with other models.
-
 ### (Optional) Groq API
 
-You can also use models from Groq (get your API key from https://console.groq.com/keys).
+You can also use models from Groq. You'll need to:
 
-Rename the `.env.example` file to `.env` and add your API key inside:
+Get your API key from https://console.groq.com/keys
+Rename the .env.example file to .env and add your API key:
 
 ```bash
+# On Windows
+rename .env.example .env
+# On macOS/Linux
 mv .env.example .env
+
+#edit the .env file to add your Grow API Key: 
+#GROQ_API_KEY=your_api_key_here
 ```
 
-Look into the [`config.py`](querymancer/config.py) file to set your preferred model.
+Look into the [`config.py`]file to set your preferred model.
 
+(Optional) Ollama Integration
+The application can also use Ollama for local LLM inference:
+
+```bash
+# On Windows/macOS
+ollama pull qwen2.5
+
+```
+You can configure which model to use in the config.py file.
 
 ## Run the Streamlit app
 
