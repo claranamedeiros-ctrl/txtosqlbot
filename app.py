@@ -12,6 +12,10 @@ from txtosqlbot.tools import get_available_tools, with_sql_cursor
 
 load_dotenv()
 
+import os
+print("Loaded GROQ_API_KEY:", os.getenv("GROQ_API_KEY"))
+
+
 LOADING_MESSAGES = [
     "Analyzing your database schema...",
     "Translating natural language to SQL...",
