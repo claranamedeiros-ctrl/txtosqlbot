@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 
-from querymancer.agent import ask, create_history
-from querymancer.config import Config
-from querymancer.models import create_llm
-from querymancer.tools import get_available_tools, with_sql_cursor
+from txtosqlbot.agent import ask, create_history
+from txtosqlbot.config import Config
+from txtosqlbot.models import create_llm
+from txtosqlbot.tools import get_available_tools, with_sql_cursor
 
 load_dotenv()
 

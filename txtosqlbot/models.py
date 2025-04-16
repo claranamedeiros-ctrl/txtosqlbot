@@ -2,7 +2,7 @@ from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_groq import ChatGroq
 from langchain_ollama import ChatOllama
 
-from querymancer.config import Config, ModelConfig, ModelProvider
+from txtosqlbot.config import Config, ModelConfig, ModelProvider
 
 
 def create_llm(model_config: ModelConfig) -> BaseChatModel:

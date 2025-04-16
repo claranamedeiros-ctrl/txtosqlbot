@@ -7,8 +7,8 @@ from langchain_core.messages import ToolMessage
 from langchain_core.messages.tool import ToolCall
 from langchain_core.tools import BaseTool
 
-from querymancer.config import Config
-from querymancer.logging import log, log_panel
+from txtosqlbot.config import Config
+from txtosqlbot.logging import log, log_panel
 
 
 def get_available_tools() -> List[BaseTool]:

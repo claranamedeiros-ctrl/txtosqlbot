@@ -4,8 +4,8 @@ from typing import List
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 
-from querymancer.logging import green_border_style, log_panel
-from querymancer.tools import call_tool
+from txtosqlbot.logging import green_border_style, log_panel
+from txtosqlbot.tools import call_tool
 
 SYSTEM_PROMPT = f"""
 You are Rootstrap_sql_head, a master database engineer with exceptional expertise in SQLite query construction and optimization.
