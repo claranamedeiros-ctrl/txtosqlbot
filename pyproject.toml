@@ -1,6 +1,4 @@
-[
-project
-]
+[project]
 name = "txtosqlbot"
 version = "0.1.0"
 description = "AI agent that lets you to talk to your database"
@@ -18,29 +16,21 @@ dependencies = [
     "groq>=0.4.1",
 ]
 
-[
-dependency-groups
-]
+[dependency-groups]
 dev = [
     "faker>=37.1.0",
     "pre-commit>=4.0.1",
     "ruff>=0.8.3",
 ]
 
-[
-tool.ruff
-]
+[tool.ruff]
 line-length = 100
 target-version = "py312"
 
-[
-tool.pytest.ini_options
-]
+[tool.pytest.ini_options]
 pythonpath = [
   "."
 ]
 
-[
-tool.setuptools
-]
+[tool.setuptools]
 packages = ["txtosqlbot"]
